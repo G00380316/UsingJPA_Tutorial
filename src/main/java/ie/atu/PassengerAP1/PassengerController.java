@@ -29,4 +29,9 @@ public class PassengerController {
     public void savePassenger(@RequestBody Passenger passenger) {
        myService.savePassenger(passenger);
     }
+
+    @GetMapping("/name/{name}")
+    public Passenger getPassengerName(@PathVariable("name") String name){
+        return myService.findPassengerByName(name);
+    }
 }
