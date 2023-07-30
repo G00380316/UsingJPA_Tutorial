@@ -1,18 +1,18 @@
 package ie.atu.PassengerAP1;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
+@AllArgsConstructor
 public class PassengerService {
+
+    private final PassengerRepo passengerRepo;
 
     public List<Passenger> getPassengers()
     {
-        List<Passenger> myPassengers = List.of(
-                new Passenger("Mr", "Enoch", "123", 21, 23),
-                new Passenger("Mr", "Enoch", "6723", 244L, 93),
-                new Passenger("Mr", "Enoch", "144", 5562L, 53));
-        return myPassengers;
+        return passengerRepo.findAll();
     }
 
     public Passenger getMyPassenger(String passengerID) {

@@ -1,5 +1,6 @@
 package ie.atu.PassengerAP1;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,13 +10,25 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
+@Table
 public class Passenger {
     private String title;
     private String name;
     private String id;
     private long phone;
     private int age;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long count;
 
+    public Passenger(String title, String name, String id,long phone, int age){
+        setTitle(title);
+        setName(name);
+        setId(id);
+        setPhone(phone);
+        setAge(age);
+    }
     public String getTitle() {
         return title;
     }
