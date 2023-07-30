@@ -23,4 +23,8 @@ public class PassengerService {
     public void savePassenger(Passenger passenger){
         passengerRepo.save(passenger);
     }
+
+    public Passenger findPassengerByName(String name){
+        return passengerRepo.findPassengerByName(name);
+    }
 }
