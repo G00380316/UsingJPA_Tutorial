@@ -1,5 +1,6 @@
 package ie.atu.PassengerAP1;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -7,9 +8,10 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "api/passenger")
 public class PassengerController {
-    PassengerService myService;
+    private final PassengerService myService;
 
     //Injects an instance of class for reference when code is running
+    @Autowired
     public PassengerController(PassengerService myService){
         this.myService = myService;
     }
